@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": ["node", "react"],
+
+    "paths": {
+      "#oxlint.config.ts": ["./oxlint.config.ts"],
+      "#oxfmt.config.ts": ["./oxfmt.config.ts"],
+      "#fixtures/*": ["./fixtures/*"],
+      "#/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "fixtures/**/*.ts",
+    "fixtures/**/*.tsx",
+    "oxfmt.config.ts",
+    "oxlint.config.ts"
+  ],
+  "exclude": ["dist", "node_modules"]
+}

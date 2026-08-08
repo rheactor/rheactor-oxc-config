@@ -1,0 +1,67 @@
+{
+  "name": "@rheactor/rheactor-ocx-config",
+  "version": "1.0.0",
+  "description": "Rheactor Oxc Config.",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "imports": {
+    "#oxlint.config.ts": "./oxlint.config.ts",
+    "#oxfmt.config.ts": "./oxfmt.config.ts",
+    "#fixtures/*": "./fixtures/*",
+    "#/*": "./src/*"
+  },
+  "exports": {
+    "./oxfmt": {
+      "types": "./dist/oxfmt.d.mts",
+      "default": "./dist/oxfmt.mjs"
+    },
+    "./oxlint": {
+      "types": "./dist/oxlint.d.mts",
+      "default": "./dist/oxlint.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "lint": "npm run typecheck && npm run oxlint && npm run oxfmt",
+    "lint:fix": "npm run typecheck && npm run oxlint:fix && npm run oxfmt:fix",
+    "oxfmt": "oxfmt --check ./src ./fixtures",
+    "oxfmt:fix": "oxfmt --write ./src ./fixtures",
+    "oxlint": "oxlint ./src ./fixtures",
+    "oxlint:debug": "oxlint --fix ./src ./fixtures --debug timings",
+    "oxlint:fix": "oxlint --fix ./src ./fixtures",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "oxfmt": "^0.62.0",
+    "oxlint": "^1.77.0",
+    "oxlint-tsgolint": "^7.0.2001"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "next": "^16.3.0",
+    "react": "^19.2.8",
+    "tsdown": "^0.22.14",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  },
+  "peerDependencies": {
+    "next": "^16.3.0",
+    "react": "^19.2.8",
+    "vitest": "^4.1.10"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "vitest": {
+      "optional": true
+    }
+  }
+}

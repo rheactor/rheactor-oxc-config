@@ -1,0 +1,1 @@
+import{defineConfig as e}from"oxfmt";var t=e({ignorePatterns:[`dist`,`node_modules`],jsdoc:{addDefaultToDescription:!1,preferCodeFences:!0,separateReturnsFromParam:!0,separateTagGroups:!0},proseWrap:`always`,sortImports:!0,sortPackageJson:{sortScripts:!0},sortTailwindcss:{functions:[`twMerge`,`twJoin`]}});export{t as default};
