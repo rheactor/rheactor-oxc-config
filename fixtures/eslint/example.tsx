@@ -348,7 +348,7 @@ export const noImplicitCoercionBoolean = !!string;
 export const noImplicitCoercionNumber = +string;
 // oxlint-disable-next-line no-implicit-coercion prefer-template
 export const noImplicitCoercionString = "" + string;
-export const noImplicitCoercionTemplate = `${string}`; // buggy when disallowTemplateShorthand is true
+export const noImplicitCoercionTemplate = String(string); // buggy when disallowTemplateShorthand is true
 
 setTimeout("alert('Hi!')", 100);
 
@@ -696,6 +696,10 @@ export const objectShorthand = {
     // empty
   },
 };
+
+// oxlint-disable-next-line one-var
+export const oneVarA = 1,
+  oneVarB = 2;
 
 // oxlint-disable-next-line operator-assignment
 items.length = items.length + 1;

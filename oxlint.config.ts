@@ -119,10 +119,7 @@ export const allRules: DummyRuleMap = {
   "eslint/no-fallthrough": "error",
   "eslint/no-func-assign": "off", // covered by typescript
   "eslint/no-global-assign": "off", // covered by typescript
-  "eslint/no-implicit-coercion": [
-    "warn",
-    // { disallowTemplateShorthand: true }, buggy https://github.com/oxc-project/oxc/issues/25454
-  ],
+  "eslint/no-implicit-coercion": ["warn", { disallowTemplateShorthand: true }],
   "eslint/no-implicit-globals": "warn",
   "eslint/no-implied-eval": "off", // covered by typescript
   "eslint/no-import-assign": "off", // covered by typescript
@@ -209,7 +206,7 @@ export const allRules: DummyRuleMap = {
   "eslint/no-warning-comments": ["warn", { decoration: ["*"], terms: ["todo", "@todo"] }],
   // eslint/no-with: on by default
   "eslint/object-shorthand": ["warn", "always", { avoidQuotes: true }],
-  // eslint/one-var: not available (https://github.com/oxc-project/oxc/pull/24470)
+  "eslint/one-var": ["warn", "never"],
   "eslint/operator-assignment": "warn",
   "eslint/prefer-arrow-callback": "warn",
   "eslint/prefer-const": "warn",
@@ -732,7 +729,7 @@ export const jsxRules: DummyRuleMap = {
   "react/only-export-components": ["warn", { allowExportNames: ["metadata"] }],
   // react/prefer-es6-class: off
   // react/prefer-function-component: off
-  "react/react-compiler": ["warn", { reportAllBailouts: true }],
+  "react/react-compiler": "off", // buggy?
   // react/react-in-jsx-scope: off
   // react/require-render-return: off
   "react/rules-of-hooks": "warn",

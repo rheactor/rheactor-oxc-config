@@ -34,15 +34,17 @@ export function ComponentC({ isBoolean, children }: PropsWithChildren & Partial<
 export function Component({ items = [1, 2, 3], string, isBoolean, onEvent }: Properties) {
   const [state, setState] = useState(0);
 
-  useEffect(() => {
-    console.log(string, isBoolean);
+  useEffect(
+    () => {
+      console.log(string, isBoolean);
 
-    // oxlint-disable-next-line react/react-compiler
-    setState(123);
+      setState(123);
 
-    console.log(state);
+      console.log(state);
+    },
     // oxlint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    [],
+  );
 
   const eventHandler = useCallback(() => {
     onEvent?.();
@@ -55,9 +57,8 @@ export function Component({ items = [1, 2, 3], string, isBoolean, onEvent }: Pro
     return <div />;
   }
 
-  // oxlint-disable-next-line react/react-compiler
   if (Math.random()) {
-    // oxlint-disable-next-line react-hooks/rules-of-hooks react/react-compiler
+    // oxlint-disable-next-line react-hooks/rules-of-hooks
     const [invalidState, setInvalidState] = useState(false);
 
     setInvalidState(true);
@@ -126,7 +127,6 @@ export function Component({ items = [1, 2, 3], string, isBoolean, onEvent }: Pro
       {/* oxlint-disable-next-line react/no-unescaped-entities */}
       <div>'</div>
 
-      {/* oxlint-disable-next-line react/react-compiler */}
       <UnstableNestedComponent />
 
       {/* oxlint-disable-next-line react/self-closing-comp */}
@@ -141,7 +141,6 @@ export function ContextProvider() {
   const [state, setState] = useState(0);
 
   useEffect(() => {
-    // oxlint-disable-next-line react/react-compiler
     setState(123);
   }, []);
 

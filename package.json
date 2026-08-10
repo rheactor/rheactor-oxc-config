@@ -24,9 +24,9 @@
     }
   },
   "scripts": {
-    "build": "tsdown",
-    "lint": "npm run typecheck && npm run oxlint && npm run oxfmt",
-    "lint:fix": "npm run typecheck && npm run oxlint:fix && npm run oxfmt:fix",
+    "build": "bun run lint && tsdown",
+    "lint": "bun run typecheck && bun run oxlint && bun run oxfmt",
+    "lint:fix": "bun run typecheck && bun run oxlint:fix && bun run oxfmt:fix",
     "oxfmt": "oxfmt --check ./src ./fixtures",
     "oxfmt:fix": "oxfmt --write ./src ./fixtures",
     "oxlint": "oxlint ./src ./fixtures",
@@ -35,8 +35,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "oxfmt": "^0.62.0",
-    "oxlint": "^1.77.0",
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.78.0",
     "oxlint-tsgolint": "^7.0.2001"
   },
   "devDependencies": {
