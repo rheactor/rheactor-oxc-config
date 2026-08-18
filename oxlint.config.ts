@@ -675,71 +675,92 @@ export const jsxRules: DummyRuleMap = {
 
   /** React rules */
   "react/button-has-type": "warn",
+  "react/capitalized-calls": "warn",
   "react/checked-requires-onchange-or-readonly": "warn",
-  // react/display-name: off
+  "react/error-boundaries": "warn",
   "react/exhaustive-deps": "warn",
-  // react/forbid-component-props: off
-  // react/forbid-dom-props: off
-  // react/forbid-elements: off
+  "react/exhaustive-effect-dependencies": "warn",
   "react/forward-ref-uses-ref": "off", // deprecated for React 19
   "react/function-component-definition": "warn",
+  "react/globals": "warn",
   "react/hook-use-state": "warn",
+  "react/hooks": "warn",
   "react/iframe-missing-sandbox": "warn",
+  "react/immutability": "warn",
+  "react/incompatible-library": "off",
+  "react/invariant": "warn",
   "react/jsx-boolean-value": "warn",
-  // react/jsx-child-element-spacing: not available
   "react/jsx-curly-brace-presence": "warn",
-  // react/jsx-filename-extension: off (covered by typescript)
   "react/jsx-fragments": "warn",
   "react/jsx-handler-names": ["warn", { checkInlineFunction: false, checkLocalVariables: true }],
   "react/jsx-key": "warn",
-  // react/jsx-newline: not available
-  // react/jsx-max-depth: off
   "react/jsx-no-comment-textnodes": "warn",
   "react/jsx-no-constructed-context-values": "warn",
   "react/jsx-no-duplicate-props": "off",
-  // react/jsx-no-literals: off
-  // react/jsx-no-script-url: off
   "react/jsx-no-target-blank": "warn",
   "react/jsx-no-undef": "off",
   "react/jsx-no-useless-fragment": "warn",
   "react/jsx-pascal-case": "warn",
   "react/jsx-props-no-spread-multi": "warn",
-  // react/jsx-props-no-spreading: off
+  "react/memo-dependencies": "warn",
   "react/no-array-index-key": "warn",
   "react/no-children-prop": "warn",
   "react/no-clone-element": "warn",
-  "react/no-danger": "warn",
   "react/no-danger-with-children": "warn",
+  "react/no-danger": "warn",
+  "react/no-deriving-state-in-effects": "warn",
   "react/no-did-mount-set-state": "off",
   "react/no-did-update-set-state": "off",
   "react/no-direct-mutation-state": "off",
   "react/no-find-dom-node": "off",
   "react/no-is-mounted": "off",
   "react/no-multi-comp": ["warn", { ignoreStateless: true }],
-  // react/no-namespace: off
   "react/no-object-type-as-default-prop": "warn",
   "react/no-react-children": "warn",
-  // react/no-redundant-should-component-update: off
   "react/no-render-return-value": "off",
-  // react/no-set-state: off
-  // react/no-string-refs: off
   "react/no-this-in-sfc": "off",
   "react/no-unescaped-entities": "warn",
-  // react/no-unknown-property: off (covered by typescript)
   "react/no-unsafe": "off",
   "react/no-unstable-nested-components": "warn",
   "react/no-will-update-set-state": "off",
   "react/only-export-components": ["warn", { allowExportNames: ["metadata"] }],
-  // react/prefer-es6-class: off
-  // react/prefer-function-component: off
-  "react/react-compiler": "off", // buggy?
-  // react/react-in-jsx-scope: off
-  // react/require-render-return: off
+  "react/preserve-manual-memoization": "warn",
+  "react/purity": "warn",
+  "react/refs": "warn",
+  "react/rule-suppression": "off",
   "react/rules-of-hooks": "warn",
   "react/self-closing-comp": "warn",
+  "react/set-state-in-effect": "warn",
+  "react/set-state-in-render": "warn",
+  "react/static-components": "warn",
+  "react/syntax": "warn",
+  "react/todo": "warn",
+  "react/unsupported-syntax": "off", // buggy?
+  "react/use-memo": "warn",
+  "react/void-dom-elements-no-children": "warn",
+  "react/void-use-memo": "warn",
+  // react/display-name: off
+  // react/forbid-component-props: off
+  // react/forbid-dom-props: off
+  // react/forbid-elements: off
+  // react/jsx-child-element-spacing: not available
+  // react/jsx-filename-extension: off (covered by typescript)
+  // react/jsx-max-depth: off
+  // react/jsx-newline: not available
+  // react/jsx-no-literals: off
+  // react/jsx-no-script-url: off
+  // react/jsx-props-no-spreading: off
+  // react/no-namespace: off
+  // react/no-redundant-should-component-update: off
+  // react/no-set-state: off
+  // react/no-string-refs: off
+  // react/no-unknown-property: off (covered by typescript)
+  // react/prefer-es6-class: off
+  // react/prefer-function-component: off
+  // react/react-in-jsx-scope: off
+  // react/require-render-return: off
   // react/state-in-constructor: off
   // react/style-prop-object: off (covered by typescript)
-  "react/void-dom-elements-no-children": "warn",
 
   /** React-perf rules */
   "react-perf/jsx-no-jsx-as-prop": "warn",

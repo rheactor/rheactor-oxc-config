@@ -5,6 +5,8 @@ import {
   Fragment,
   useCallback,
   useEffect,
+  useMemo,
+  useRef,
   useState,
 } from "react";
 import type { PropsWithChildren } from "react";
@@ -31,7 +33,7 @@ export function ComponentC({ isBoolean, children }: PropsWithChildren & Partial<
 }
 
 // oxlint-disable-next-line react/no-object-type-as-default-prop
-export function Component({ items = [1, 2, 3], string, isBoolean, onEvent }: Properties) {
+export function ReactPurity({ items = [1, 2, 3], string, isBoolean, onEvent }: Properties) {
   const [state, setState] = useState(0);
 
   useEffect(
@@ -77,7 +79,7 @@ export function Component({ items = [1, 2, 3], string, isBoolean, onEvent }: Pro
       {/* oxlint-disable-next-line react/iframe-missing-sandbox */}
       <iframe />
 
-      <Component
+      <ReactPurity
         // oxlint-disable-next-line react/jsx-curly-brace-presence
         string={"123"}
         // oxlint-disable-next-line react/jsx-boolean-value
@@ -141,6 +143,7 @@ export function ContextProvider() {
   const [state, setState] = useState(0);
 
   useEffect(() => {
+    // oxlint-disable-next-line react/set-state-in-effect
     setState(123);
   }, []);
 
@@ -150,3 +153,152 @@ export function ContextProvider() {
 
 // oxlint-disable-next-line react/only-export-components
 export const onlyExportsComponents = 123;
+
+export function ErrorBoundaries() {
+  try {
+    // oxlint-disable-next-line react/error-boundaries
+    return <div />;
+  } catch {
+    return null;
+  }
+}
+
+// oxlint-disable-next-line no-unused-vars
+let globalVariable = 123;
+
+export function ReactGlobals() {
+  // oxlint-disable-next-line react/globals
+  globalVariable = 456;
+
+  return <div />;
+}
+
+export function ReactImmutability() {
+  // oxlint-disable-next-line react/hook-use-state
+  const [state] = useState({ a: 0 });
+
+  // oxlint-disable-next-line react/immutability
+  state.a = 1; // mutates state directly
+
+  return <div>{state.a}</div>;
+}
+
+function useHook() {
+  throw new Error("Function not implemented.");
+}
+
+// oxlint-disable-next-line react/only-export-components
+export function usePreserveManualMemoization(x: number) {
+  const value: number[] = [];
+
+  useHook();
+
+  value.push(x);
+
+  // oxlint-disable-next-line react/preserve-manual-memoization react-hooks/exhaustive-deps
+  return useCallback(() => [value], [value]);
+}
+
+export function ReactPurityB() {
+  // oxlint-disable-next-line react/purity
+  const rand = Math.random();
+
+  return <div>{rand}</div>;
+}
+
+export function ReactRefs() {
+  const ref = useRef(null);
+
+  // oxlint-disable-next-line react/refs
+  const value = ref.current;
+
+  return <div>{value}</div>;
+}
+
+export function ReactSetStateInEffect() {
+  const [state, setState] = useState(0);
+
+  useEffect(() => {
+    // oxlint-disable-next-line react/set-state-in-effect
+    setState((s) => s + 1);
+  }, []);
+
+  return state;
+}
+
+export function ReactSetStateInRender() {
+  const [state, setState] = useState(0);
+
+  // oxlint-disable-next-line react/set-state-in-render
+  setState(state + 1);
+
+  return <div>{state}</div>;
+}
+
+export function ReactStaticComponents() {
+  const Component = () => ReactSetStateInRender();
+
+  // oxlint-disable-next-line react/static-components
+  return <Component />;
+}
+
+export function ReactUseMemo() {
+  // oxlint-disable-next-line react/use-memo
+  const x = useMemo(async () => {
+    await Promise.resolve();
+
+    return 123;
+  }, []);
+
+  return <div>{x}</div>;
+}
+
+export function ReactUnsupportedSyntax() {
+  // oxlint-disable-next-line no-eval
+  eval("props.x = true");
+
+  return <div />;
+}
+
+export function ReactVoidUseMemo() {
+  // oxlint-disable-next-line react/void-use-memo
+  useMemo(() => {
+    console.log(123);
+  }, []);
+
+  return <div />;
+}
+
+export function ReactNoDerivingStateInEffects() {
+  // oxlint-disable-next-line react/hook-use-state
+  const [firstName] = useState("X");
+  // oxlint-disable-next-line react/hook-use-state
+  const [lastName] = useState("Y");
+  const [fullName, setFullName] = useState("");
+
+  useEffect(() => {
+    // oxlint-disable-next-line react/set-state-in-effect react/no-deriving-state-in-effects
+    setFullName(`${firstName} ${lastName}`);
+  }, [firstName, lastName]);
+
+  return <div>{fullName}</div>;
+}
+
+export function ReactCapitalizedCalls() {
+  // oxlint-disable-next-line react/capitalized-calls
+  return <div>{ReactNoDerivingStateInEffects()}</div>;
+}
+
+export function ReactHooks(x: number) {
+  if (x > 0) {
+    // oxlint-disable-next-line react/hook-use-state react-hooks/rules-of-hooks
+    useState(0); // hooks may not be called conditionally
+  }
+
+  return <div>{x}</div>;
+}
+
+export function ReactMemoDependencies({ x, y }: { x: number; y: number }) {
+  // oxlint-disable-next-line react/memo-dependencies react-hooks/exhaustive-deps
+  return useMemo(() => x, [x, y]);
+}

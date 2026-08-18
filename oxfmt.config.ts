@@ -1,6 +1,6 @@
 import { defineConfig } from "oxfmt";
 
-// oxlint-disable-next-line no-restricted-exports
+// oxlint-disable-next-line import/no-anonymous-default-export
 export default defineConfig({
   ignorePatterns: ["dist", "node_modules"],
   jsdoc: {

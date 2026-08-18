@@ -1,3 +1,4 @@
+// oxlint-disable-next-line max-classes-per-file
 import assert from "node:assert";
 import EventEmitter from "node:events";
 import { readFile } from "node:fs/promises";
@@ -79,7 +80,6 @@ export const newForBuiltinsB = Array(1, 2, 3);
 // oxlint-disable-next-line unicorn/new-for-builtins
 export const newForBuiltinsC = Date();
 
-// oxlint-disable-next-line max-classes-per-file
 export class NoAccessorRecursion {
   public get foo(): number {
     // oxlint-disable-next-line unicorn/no-accessor-recursion

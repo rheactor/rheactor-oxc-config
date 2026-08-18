@@ -1,3 +1,4 @@
+// oxlint-disable-next-line max-classes-per-file
 import { readFileSync } from "node:fs";
 // oxlint-disable-next-line no-duplicate-imports
 import { existsSync } from "node:fs";
@@ -73,7 +74,6 @@ export const funcNameMatching = function bar() {};
 // oxlint-disable-next-line func-names no-empty-function object-shorthand
 export const cat = { meow: function () {} };
 
-// oxlint-disable-next-line max-classes-per-file
 export class GetterReturn {
   // @ts-ignore: no return.
   // oxlint-disable-next-line class-methods-use-this

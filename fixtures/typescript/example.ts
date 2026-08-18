@@ -1,4 +1,4 @@
-// oxlint-disable-next-line typescript/array-type
+// oxlint-disable-next-line typescript/array-type max-classes-per-file
 export const arrayTypeA: Array<number> = new Array<number>();
 
 // oxlint-disable-next-line typescript/array-type
@@ -44,7 +44,6 @@ const dotNotation = { abc: 123 };
 
 export const dotNotationAbc = dotNotation.abc;
 
-// oxlint-disable-next-line max-classes-per-file
 export class ExplicitMemberAccessibility {
   // oxlint-disable-next-line typescript/explicit-member-accessibility
   get self() {
@@ -246,7 +245,7 @@ export const strAny: string = anyValue;
 // oxlint-disable-next-line typescript/no-unsafe-call
 anyValue();
 
-// oxlint-disable-next-line typescript/no-empty-interface typescript/no-unsafe-declaration-merging typescript/no-empty-object-type
+// oxlint-disable-next-line typescript/no-empty-interface typescript/no-unsafe-declaration-merging typescript/no-empty-object-type no-redeclare
 interface NoUnsafeDeclarationMerging {}
 
 // oxlint-disable-next-line typescript/no-extraneous-class

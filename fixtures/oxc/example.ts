@@ -82,4 +82,4 @@ export function onlyUsedInRecursion(valueA: number, valueB: number): number {
 }
 
 // oxlint-disable-next-line oxc/uninvoked-array-callback
-export const uninvokedArrayCallback = new Array(5).map((_) => 123);
+export const uninvokedArrayCallback = new Array(5).map(() => 123);
