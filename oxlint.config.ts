@@ -43,25 +43,34 @@ export const allRules: DummyRuleMap = {
     {
       exceptions: [
         "_",
-        // Basic
         "a",
+        "A",
         "b",
+        "B",
         "c",
+        "C",
         "k",
+        "K",
         "n",
+        "N",
         "v",
+        "V",
+        "t",
+        "T",
+        "r",
+        "R",
         "x",
+        "X",
         "y",
+        "Y",
         "z",
-        // Looping
+        "Z",
         "i",
+        "I",
         "j",
+        "J",
         "k",
-        // Generics
-        "T", // Type
-        "K", // Key
-        "V", // Value
-        "R", // Return
+        "K",
       ],
     },
   ],
