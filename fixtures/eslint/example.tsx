@@ -105,7 +105,7 @@ for (const key in objectItems) {
 export class w {}
 
 // oxlint-disable-next-line id-length
-export type X = 123;
+export type F = 123;
 export type IdLength<T> = T;
 
 // oxlint-disable-next-line id-match
