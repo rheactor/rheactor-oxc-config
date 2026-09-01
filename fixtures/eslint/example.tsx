@@ -101,11 +101,6 @@ for (const key in objectItems) {
   console.log(key);
 }
 
-// oxlint-disable-next-line id-length
-export class w {}
-
-// oxlint-disable-next-line id-length
-export type F = 123;
 export type IdLength<T> = T;
 
 // oxlint-disable-next-line id-match

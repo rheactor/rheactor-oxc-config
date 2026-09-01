@@ -38,42 +38,7 @@ export const allRules: DummyRuleMap = {
   "eslint/grouped-accessor-pairs": ["warn", "setBeforeGet"],
   "eslint/guard-for-in": "warn",
   // eslint/id-denylist: off
-  "eslint/id-length": [
-    "warn",
-    {
-      exceptions: [
-        "_",
-        "a",
-        "A",
-        "b",
-        "B",
-        "c",
-        "C",
-        "k",
-        "K",
-        "n",
-        "N",
-        "v",
-        "V",
-        "t",
-        "T",
-        "r",
-        "R",
-        "x",
-        "X",
-        "y",
-        "Y",
-        "z",
-        "Z",
-        "i",
-        "I",
-        "j",
-        "J",
-        "k",
-        "K",
-      ],
-    },
-  ],
+  "eslint/id-length": "off",
   "eslint/id-match": [
     "warn",
     `^_*(?:[A-Z_]*|[a-zA-Z]+)$`,
@@ -679,7 +644,7 @@ export const jsxRules: DummyRuleMap = {
   "nextjs/no-styled-jsx-in-document": "off", // needless
   "nextjs/no-sync-scripts": "off", // needless
   "nextjs/no-title-in-document-head": "off", // needless
-  "nextjs/no-typos": "off", // buggy?
+  "nextjs/no-typos": "warn",
   "nextjs/no-unwanted-polyfillio": "off", // needless
 
   /** React rules */

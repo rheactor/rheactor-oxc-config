@@ -4,10 +4,10 @@
     "types": ["node", "react"],
 
     "paths": {
-      "#oxlint.config.ts": ["./oxlint.config.ts"],
-      "#oxfmt.config.ts": ["./oxfmt.config.ts"],
+      "#/*": ["./src/*"],
       "#fixtures/*": ["./fixtures/*"],
-      "#/*": ["./src/*"]
+      "#oxfmt.config.ts": ["./oxfmt.config.ts"],
+      "#oxlint.config.ts": ["./oxlint.config.ts"]
     }
   },
   "include": [
