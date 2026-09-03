@@ -823,11 +823,17 @@ export const vitestRules: DummyRuleMap = {
   "vitest/warn-todo": "warn",
 };
 
+export const rheactorRules: DummyRuleMap = {
+  "rheactor/regexp-sort-flags": "warn",
+};
+
 // oxlint-disable-next-line import/no-anonymous-default-export
 export default defineConfig({
+  jsPlugins: ["@rheactor/rheactor-oxc-plugin"],
   ignorePatterns: ["dist"],
   rules: allRules,
   overrides: [
+    { files: ["**/*.{ts,tsx}"], rules: rheactorRules },
     { files: ["**/*.ts"], rules: nodeRules },
     { files: ["**/*.tsx"], rules: jsxRules },
     { files: ["**/*.test.ts", "**/*.test.tsx"], rules: vitestRules },
