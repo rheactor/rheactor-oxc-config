@@ -1,7 +1,6 @@
 import { DummyRuleMap } from "oxlint";
 //#region oxlint.config.d.ts
 declare const _default: {
-  jsPlugins: string[];
   ignorePatterns: string[];
   rules: DummyRuleMap;
   overrides: {

@@ -37,7 +37,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@rheactor/rheactor-oxc-plugin": "github:rheactor/rheactor-oxc-plugin",
     "oxfmt": "^0.66.0",
     "oxlint": "^1.81.0",
     "oxlint-tsgolint": "^7.0.2001"
@@ -47,14 +46,14 @@
     "@types/react": "^19.2.18",
     "next": "^16.3.4",
     "react": "^19.2.8",
-    "tsdown": "^0.22.14",
+    "tsdown": "^0.23.0",
     "typescript": "^7.0.2",
-    "vitest": "^4.1.11"
+    "vitest": "^5.0.0"
   },
   "peerDependencies": {
     "next": "^16.3.4",
     "react": "^19.2.8",
-    "vitest": "^4.1.11"
+    "vitest": "^5.0.0"
   },
   "peerDependenciesMeta": {
     "next": {
