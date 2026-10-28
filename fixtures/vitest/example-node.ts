@@ -1,3 +1,4 @@
+// Rule: vitest/no-import-node-test
 // oxlint-disable-next-line vitest/no-import-node-test
 import { describe } from "node:test";
 

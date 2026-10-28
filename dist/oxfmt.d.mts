@@ -1,4 +1,3 @@
-//#region oxfmt.config.d.ts
 declare const _default: {
   ignorePatterns: string[];
   jsdoc: {
@@ -16,5 +15,4 @@ declare const _default: {
     functions: string[];
   };
 };
-//#endregion
 export { _default as default };

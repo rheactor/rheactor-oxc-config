@@ -11,10 +11,13 @@ export function Component({ ..._props }: Properties) {
   return (
     <div>
       <Component
+        // Rule: react-perf/jsx-no-jsx-as-prop
         // oxlint-disable-next-line react-perf/jsx-no-jsx-as-prop
         item={<div />}
+        // Rule: react-perf/jsx-no-new-array-as-prop
         // oxlint-disable-next-line react-perf/jsx-no-new-array-as-prop
         array={[1, 2, 3]}
+        // Rule: react-perf/jsx-no-new-object-as-prop
         // oxlint-disable-next-line react-perf/jsx-no-new-object-as-prop
         obj={{ abc: 123 }}
       />

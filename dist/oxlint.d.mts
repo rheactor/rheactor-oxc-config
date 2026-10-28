@@ -1,5 +1,4 @@
 import { DummyRuleMap } from "oxlint";
-//#region oxlint.config.d.ts
 declare const _default: {
   ignorePatterns: string[];
   rules: DummyRuleMap;
@@ -19,5 +18,4 @@ declare const _default: {
     };
   };
 };
-//#endregion
 export { _default as default };

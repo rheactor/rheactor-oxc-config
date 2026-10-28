@@ -27,33 +27,31 @@
     "build": "bun run lint && tsdown",
     "lint": "bun run typecheck && bun run oxlint && bun run oxfmt",
     "lint:fix": "bun run typecheck && bun run oxlint:fix && bun run oxfmt:fix",
-    "oxfmt": "oxfmt --check ./src ./fixtures",
-    "oxfmt:fix": "oxfmt --write ./src ./fixtures",
-    "oxlint": "oxlint ./src ./fixtures",
-    "oxlint:debug": "oxlint --fix ./src ./fixtures --debug timings",
-    "oxlint:fix": "oxlint --fix ./src ./fixtures",
-    "test": "vitest --run",
-    "test:watch": "vitest",
+    "oxfmt": "oxfmt --check ./src ./fixtures '!fixtures/eslint/example-bom.ts'",
+    "oxfmt:fix": "oxfmt --write ./src ./fixtures '!fixtures/eslint/example-bom.ts'",
+    "oxlint": "oxlint ./src ./fixtures --ignore-pattern fixtures/eslint/example-legacy.cjs && oxlint -c ./fixtures/eslint/oxlint.config.ts ./fixtures/eslint/example-legacy.cjs",
+    "oxlint:debug": "oxlint --fix ./src ./fixtures --ignore-pattern fixtures/eslint/example-legacy.cjs --debug timings && oxlint --fix -c ./fixtures/eslint/oxlint.config.ts ./fixtures/eslint/example-legacy.cjs --debug timings",
+    "oxlint:fix": "oxlint --fix ./src ./fixtures --ignore-pattern fixtures/eslint/example-legacy.cjs && oxlint --fix -c ./fixtures/eslint/oxlint.config.ts ./fixtures/eslint/example-legacy.cjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "oxfmt": "^0.68.0",
-    "oxlint": "^1.83.0",
-    "oxlint-tsgolint": "^7.0.2001"
+    "oxfmt": "^0.75.0",
+    "oxlint": "^1.90.0",
+    "oxlint-tsgolint": "^7.0.2005"
   },
   "devDependencies": {
-    "@types/node": "^26.6.0",
+    "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",
-    "next": "^16.3.5",
-    "react": "^19.3.0",
-    "tsdown": "^0.23.0",
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "tsdown": "^0.23.3",
     "typescript": "^7.0.2",
-    "vitest": "^5.0.1"
+    "vitest": "^5.0.5"
   },
   "peerDependencies": {
-    "next": "^16.3.5",
-    "react": "^19.3.0",
-    "vitest": "^5.0.1"
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "vitest": "^5.0.5"
   },
   "peerDependenciesMeta": {
     "next": {
